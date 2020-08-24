@@ -12,13 +12,15 @@ function setup() {
 
 }
 function draw() {
-  background("black");
+  background("lightblue");
   drawSprites();
   bullet1.velocityX = -7
-  bullet1.collide(wall1)
-  if (bullet1.collide(wall1))
+  if (bullet1.isTouching(wall1))
   {
     bullet1.velocityX = 0
+    bullet1.velocityY = 0
+    wall1.shapeColor = "red"
+    bullet1.shapeColor = "pink"
   }
   
 
